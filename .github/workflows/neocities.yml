@@ -3,7 +3,7 @@ name: Hantar Web ke Neocities Auto
 on:
   push:
     branches:
-      - main # Robot akan berjalan setiap kali abang push kod ke branch main
+      - main
 
 jobs:
   deploy:
@@ -16,7 +16,7 @@ jobs:
     - name: Tembak fail masuk Neocities
       uses: bcomnes/deploy-to-neocities@v3
       with:
-        # Kunci rahsia yang kita sorok dalam Settings GitHub petang tadi
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-        # Set 'true' supaya dia bersihkan fail lama yang tak pakai dekat pelayan Neocities
+        # PENTING: Kita beritahu robot, fail kita ada dekat luar sekali (root directory)
+        dist_dir: '.'
         cleanup: true
