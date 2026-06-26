@@ -1,0 +1,22 @@
+name: Hantar Web ke Neocities Auto
+
+on:
+  push:
+    branches:
+      - main # Robot akan berjalan setiap kali abang push kod ke branch main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Ambil kod repo terkini
+      uses: actions/checkout@v4
+
+    - name: Tembak fail masuk Neocities
+      uses: bcomnes/deploy-to-neocities@v3
+      with:
+        # Kunci rahsia yang kita sorok dalam Settings GitHub petang tadi
+        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+        # Set 'true' supaya dia bersihkan fail lama yang tak pakai dekat pelayan Neocities
+        cleanup: true
