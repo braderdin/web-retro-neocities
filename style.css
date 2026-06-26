@@ -1,0 +1,112 @@
+/* Tetapan Asas Retro Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121214; /* Hitam Garaj Gelap */
+    color: #f4edd4; /* Putih Krim Klasik */
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+}
+
+/* Header Besar Gaya Cherry Bomb */
+.main-header {
+    text-align: center;
+    padding: 40px 10px;
+}
+
+.main-header h1 {
+    font-size: 3.5rem;
+    color: #ff5500; /* Oren Motor */
+    text-shadow: 3px 3px 0px #ff007f; /* Bayang Pink Comel */
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    color: #ff007f;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Layout Grid 2 Lajur */
+.main-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.sidebar {
+    width: 35%;
+}
+
+.content {
+    width: 65%;
+}
+
+/* Gaya Kotak Bertema Kawaii Moto */
+.box {
+    background-color: #1a1a1e;
+    border: 2px solid #ff5500;
+    box-shadow: 4px 4px 0px #ff007f; /* Kesan Bayang Kotak 3D Retro */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.box h2, .box h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+/* Bingkai Gambar Profile Watak */
+.avatar-frame {
+    border: 3px dashed #ff007f;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.avatar-frame img {
+    width: 100%;
+    max-width: 150px;
+    display: block;
+}
+
+.tagline {
+    font-style: italic;
+    color: #00ffcc; /* Hijau Mint Neon */
+    font-size: 0.85rem;
+}
+
+.dashed-line {
+    border: none;
+    border-top: 2px dashed #333;
+    margin: 15px 0;
+}
+
+/* Senarai Stat */
+.stats-list {
+    list-style: none;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.stats-list li {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsif Handphone */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    .sidebar, .content {
+        width: 100%;
+    }
+}
