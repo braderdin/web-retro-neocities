@@ -9,31 +9,37 @@
 <body>
     <marquee class="retro-marquee" scrollamount="5">🌸 BIODATA & BACKSTORY PENUH BRADERDIN 🌸</marquee>
     
-    <div class="myspace-container">
-        <!-- Lajur Kiri Kekalkan Menu Supaya Orang Boleh Klik Balik -->
-        <div class="left-column">
-            <div class="social-box">
+    <!-- Ditukar kepada main-layout supaya susunan kotak oren kembali normal -->
+    <div class="main-layout">
+        
+        <!-- LAJUR KIRI: Menggunakan .sidebar dan .box -->
+        <aside class="sidebar">
+            <div class="box">
                 <h3>🗺️ Menu Utama</h3>
-                <a href="index.html" class="social-link">🏠 Home</a>
-                <a href="about.html" class="social-link" style="background-color: #ff5500; color: black;">🌷 About</a>
-                <a href="blog.html" class="social-link">📝 Blog</a>
-                <a href="links.html" class="social-link">🔗 Links</a>
-                <a href="bookmarks.html" class="social-link">🔖 Bookmarks</a>
-                <a href="experiments.html" class="social-link">🧪 Experiments</a>
-                <a href="curios.html" class="social-link">🪐 Curios</a>
-                <a href="guestbook.html" class="social-link">👋 Guestbook</a>
+                <!-- Ditambah target="_blank" pada semua pautan untuk buka di tab baharu -->
+                <a href="index.html" class="social-link" target="_blank" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🏠 Home</a>
+                <a href="about.html" class="social-link" target="_blank" style="background-color: #ff5500; color: black; display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777;">🌷 About</a>
+                <a href="blog.html" class="social-link" target="_blank" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">📝 Blog</a>
+                <a href="links.html" class="social-link" target="_blank" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🔗 Links</a>
+                <a href="bookmarks.html" class="social-link" target="_blank" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🔖 Bookmarks</a>
+                <a href="experiments.html" class="social-link" target="_blank" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🧪 Experiments</a>
+                <a href="curios.html" class="social-link" target="_blank" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🪐 Curios</a>
+                <a href="guestbook.html" class="social-link" target="_blank" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">👋 Guestbook</a>
             </div>
-        </div>
+        </aside>
 
-        <!-- Lajur Kanan: Isi Kandungan Khas Halaman About -->
-        <div class="right-column">
-            <div class="content-box">
+        <!-- LAJUR KANAN: Menggunakan .content dan .box asli -->
+        <main class="content">
+            <div class="box">
                 <h2>🌷 Mengenai Diri Saya</h2>
-                <p>Membesar dengan bau minyak hitam dan bunyi ekzos. Bagi saya, setiap tunggangan merentas sempadan adalah sebuah lembaran cerita hidup yang sangat berharga.</p>
-                <p>Dw i'n dysgu koding! Sambil-sambil layan hobi motor, saya juga gunakan ruang Neocities ini untuk mengasah bakat membina garaj digital peribadi saya sendiri.</p>
+                <p style="margin-top: 10px;">Laman ini dibina khas sebagai arkib digital peribadi untuk merekodkan segala memori tunggangan, eksplorasi alam, dan proses pembelajaran kod saya di internet. Tempat untuk menjadi diri sendiri tanpa gangguan algoritma media sosial besar.</p>
+                <p style="margin-top: 10px;">Membesar dengan bau minyak hitam dan bunyi ekzos. Bagi saya, setiap tunggangan merentas sempadan adalah sebuah lembaran cerita hidup yang sangat berharga.</p>
+                <p style="margin-top: 10px;">Dan saya juga suka koding! Sambil-sambil layan hobi motor, saya juga gunakan ruang Neocities ini untuk mengasah bakat membina garaj digital peribadi saya sendiri.</p>
+                
             </div>
-        </div>
+        </main>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
