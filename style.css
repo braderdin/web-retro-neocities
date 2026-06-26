@@ -157,3 +157,46 @@ body {
 }
 
 
+
+
+/* --- MENU NAVIGASI GAYA FRILLS --- */
+.retro-nav {
+    max-width: 900px;
+    margin: 0 auto 25px auto;
+    text-align: center;
+    background-color: #1a1a1e;
+    border: 2px solid #ff5500;
+    padding: 12px;
+    box-shadow: 4px 4px 0px #ff007f;
+}
+
+.retro-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 25px; /* Jarak antara pautan menu */
+}
+
+.retro-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: 0.2s color;
+}
+
+/* Kesan bila tetikus sentuh menu (Hover) */
+.retro-nav a:hover {
+    color: #ff007f; /* Tukar warna pink comel */
+    text-decoration: underline dashed 2px #00ffcc; /* Garis putus hijau mint */
+}
+
+/* Jarak tumpuan smooth scroll apabila menu diklik */
+.target-box {
+    scroll-margin-top: 20px;
+}
+
+
+
+
