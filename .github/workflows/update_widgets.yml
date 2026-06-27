@@ -2,10 +2,9 @@ name: 🤖 Automasi Widget 1 Jam
 
 on:
   schedule:
-    - cron: '0 * * * *' # Berjalan setiap 1 jam
+    - cron: '0 * * * *' # Berjalan setiap 1 jam sahaja (Minit ke-0)
   workflow_dispatch: # Membolehkan abang tekan butang jalankan secara manual
 
-# 🛠️ PEMBETULAN 1: Beri kebenaran untuk robot hantar (push) fail ke repo abang
 permissions:
   contents: write
 
@@ -21,8 +20,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Pasang Modul Sampingan (Requests)
-        run: pip install requests
+      - name: Pasang Modul Sampingan (Requests & Pytz)
+        run: pip install requests pytz
 
       - name: Jalankan Skrip Python
         run: python update_data.py
@@ -31,8 +30,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-          
-          # 🛠️ PEMBETULAN 2: Tambah laluan profile.njk supaya gambar avatar yang bertukar ikut disimpan sekali
-          git add _includes/widgets/cuaca-port-ride.njk _includes/widgets/jumlah-pelawat.njk _includes/components/profile.njk
-          
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Kemas kini widget cuaca, pelawat & avatar" && git push)
+          git add _includes/widgets/cuaca-port-ride.njk _includes/widgets/jumlah-pelawat.njk _includes/components/profile.njk README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Kemas kini widget cuaca, pelawat, avatar & README" && git push)
