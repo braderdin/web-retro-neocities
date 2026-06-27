@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: Koleksi Potret
+---
+
+<div class="box">
+    <h2>🖼️ Koleksi Potret Kembara</h2>
+    
+    <div style="margin-top: 20px; padding: 5px; border-left: 3px solid #ff007f;">
+        <p style="line-height: 1.6; font-size: 0.95rem;">
+            Garaj simpanan memori bergambar. Semua potret kembara di sini dihoskan melalui pelayan Imgur. 
+            Klik pada gambar untuk buka paparan saiz penuh! 🏍️
+        </p>
+    </div>
+
+    <div class="galeri-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; margin-top: 25px;">
+        
+        <a href="https://bit.ly/3QmPmqx" target="_blank" class="galeri-item">
+            <img src="https://bit.ly/3QmPmqx" alt="Potret 1">
+        </a>
+        <a href="https://i.imgur.com/GANTIKAN_DGN_LINK.jpg" target="_blank" class="galeri-item">
+            <img src="https://i.imgur.com/GANTIKAN_DGN_LINK.jpg" alt="Potret 2">
+        </a>
+        <a href="https://i.imgur.com/GANTIKAN_DGN_LINK.jpg" target="_blank" class="galeri-item">
+            <img src="https://i.imgur.com/GANTIKAN_DGN_LINK.jpg" alt="Potret 3">
+        </a>
+        
+    </div>
+</div>
+
+<style>
+    .galeri-item {
+        border: 2px dashed #ff5500;
+        padding: 4px;
+        background-color: #1a1a1e;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+        display: block;
+    }
+    .galeri-item:hover {
+        transform: scale(1.05) rotate(2deg);
+        border-color: #00ffcc;
+        box-shadow: 3px 3px 0px #ff007f;
+    }
+    .galeri-item img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover; /* Biar gambar cantik tak kemek */
+        display: block;
+    }
+</style>

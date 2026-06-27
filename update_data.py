@@ -1,5 +1,6 @@
 import re
 import requests
+import random
 
 def update_weather():
     # Koordinat port ride
@@ -64,7 +65,31 @@ def update_visitors():
     except Exception as e:
         print(f"❌ Ralat sistem pelawat: {e}")
 
+# --- FUNGSI BAHARU: KEMAS KINI AVATAR RAWAK ---
+def update_avatar():
+    # Masukkan link Imgur abang di sini juga supaya Python boleh pilih
+    senarai_avatar = [
+        "https://bit.ly/3QmPmqx",
+        "https://i.imgur.com/GAMBAR_IMGUR_1.jpg",
+        "https://i.imgur.com/GAMBAR_IMGUR_2.jpg",
+        "https://i.imgur.com/GAMBAR_IMGUR_3.jpg"
+    ]
+    try:
+        avatar_baru = random.choice(senarai_avatar)
+        with open("_includes/components/profile.njk", "r", encoding="utf-8") as f:
+            profil_html = f.read()
+            
+        pattern = r'(<!-- AVATAR_URL -->)(.*?)(<!-- AVATAR_URL_END -->)'
+        profil_html = re.sub(pattern, rf'\g<1>{avatar_baru}\g<3>', profil_html)
+        
+        with open("_includes/components/profile.njk", "w", encoding="utf-8") as f:
+            f.write(profil_html)
+        print(f"✅ Avatar rawak berjaya dikemas kini ke: {avatar_baru}")
+    except Exception as e:
+        print(f"❌ Ralat sistem avatar: {e}")
+
 if __name__ == "__main__":
     print("🤖 Memulakan proses kemas kini garaj BraderDin...")
     update_weather()
     update_visitors()
+    update_avatar()

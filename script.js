@@ -32,13 +32,6 @@ document.addEventListener('mousemove', function(e) {
     }, 30);
 });
 
-
-
-
-
-
-
-
 // ========================================================
 // --- UTULITI UNTUK MUAT KOMPONEN LUAR (JS FETCH PINTAR) ---
 // ========================================================
@@ -91,14 +84,6 @@ muatKomponen('comp-inventory', 'components/inventory.html');
 // Khas untuk menu: Selepas selesai sedut, terus jalankan fungsi warna oren
 muatKomponen('comp-menu', 'components/menu.html', autoHighlightMenu);
 
-
-
-
-
-
-
-
-
 // Menjalankan fungsi suntikan automatik apabila halaman index.html dibuka
 muatKomponen('comp-header', 'components/header.html');
 muatKomponen('comp-profile', 'components/profile.html');
@@ -109,9 +94,34 @@ muatKomponen('comp-backstory', 'components/backstory.html');
 muatKomponen('comp-vitals', 'components/vitals.html');
 muatKomponen('comp-inventory', 'components/inventory.html');
 
+// ========================================================
+// --- FUNGSI TUKAR AVATAR MANUAL (IMGUR) ---
+// ========================================================
+const senaraiAvatar = [
+    "https://bit.ly/3QmPmqx", 
+    "https://i.imgur.com/GAMBAR_IMGUR_1.jpg", // Sila tukar dengan link Imgur abang
+    "https://i.imgur.com/GAMBAR_IMGUR_2.jpg",
+    "https://i.imgur.com/GAMBAR_IMGUR_3.jpg"
+];
 
-
-
-
-
-
+function tukarAvatar(e) {
+    e.preventDefault(); // Halang skrin dari melompat ke atas bila ditekan
+    const imgElement = document.getElementById('avatar-img');
+    
+    if (imgElement) {
+        // Pilih gambar rawak dari senarai
+        let randomImg = senaraiAvatar[Math.floor(Math.random() * senaraiAvatar.length)];
+        
+        // Pastikan gambar tak ulang gambar yang sama
+        while(randomImg === imgElement.src && senaraiAvatar.length > 1) {
+            randomImg = senaraiAvatar[Math.floor(Math.random() * senaraiAvatar.length)];
+        }
+        
+        // Efek kelip pudar ala retro
+        imgElement.style.opacity = 0;
+        setTimeout(() => {
+            imgElement.src = randomImg;
+            imgElement.style.opacity = 1;
+        }, 200);
+    }
+}
