@@ -13,18 +13,9 @@
 ---
 
 ### 🤖 STATUS AUTOMASI PROJEK (Live Update)
-<<<<<<< HEAD
 > 🗓️ **Kemas Kini Terakhir Waktu MY:** `Menunggu robot pusingan seterusnya...`
 >
 > 🏁 **Status Cuaca Terkini Betong:** `Tengah sedut data...`
-=======
-<!-- START_LIVE_STATUS -->
-> 🗓️ **Kemas Kini Terakhir Waktu MY:** `Menunggu robot pusingan seterusnya...`
->
-> 🏁 **Status Cuaca Terkini Betong:** `Tengah sedut data...`
-<!-- END_LIVE_STATUS -->
-
->>>>>>> cd1a070f4a33497f96b5e052694a4c74424aa8b6
 ---
 
 ### 🛠️ Senarai Senjata & Stack Utama (Tech Stack)
@@ -45,10 +36,4 @@
 </p>
 
 ---
-<<<<<<< HEAD
 <p align="center"><sub>Brotherhood Forever. Ride Hard, Code Safe. 🏁</sub></p>
-=======
-<p align="center"><sub>Brotherhood Forever. Ride Hard, Code Safe. 🏁</sub></p>
->>>>>>> cd1a070f4a33497f96b5e052694a4c74424aa8b6
-
-
