@@ -28,9 +28,10 @@ jobs:
       - name: Build Eleventy Site
         run: npx @11ty/eleventy
 
-      # 5. Hantar HASIL FOLDER _SITE yang dah siap ditukarkan ke Neocities
+      # 5. Hantar FOLDER _SITE menggunakan robot Neocities yang betul
       - name: Deploy to Neocities
-        uses: maxmind/neocities-deploy@v1
+        uses: bcomnes/deploy-to-neocities@v3
         with:
           api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+          cleanup: true
           dist_dir: _site
