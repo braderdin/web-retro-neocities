@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | BraderDin</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <marquee class="retro-marquee" scrollamount="5">🌸 SELAMAT DATANG KE GARAJ DIGITAL BRADERDIN 🌸</marquee>
+    
+    <div class="main-layout">
+        <!-- LAJUR KIRI: Kita masukkan komponen menu secara kekal di sini -->
+        <aside class="sidebar">
+            {% include "components/menu.html" %}
+        </aside>
+
+        <!-- LAJUR KANAN: Tempat di mana kandungan berbeza setiap halaman akan masuk -->
+        <main class="content">
+            {{ content | safe }}
+        </main>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>
