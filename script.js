@@ -99,8 +99,8 @@ muatKomponen('comp-inventory', 'components/inventory.html');
 // ========================================================
 const senaraiAvatar = [
     "https://bit.ly/3QmPmqx", 
-    "https://i.imgur.com/GAMBAR_IMGUR_1.jpg", // Sila tukar dengan link Imgur abang
-    "https://i.imgur.com/GAMBAR_IMGUR_2.jpg",
+    "https://i.imgur.com/My1N1mu.jpeg", // Sila tukar dengan link Imgur abang
+    "https://i.imgur.com/BznKqU1.jpeg",
     "https://i.imgur.com/GAMBAR_IMGUR_3.jpg"
 ];
 
