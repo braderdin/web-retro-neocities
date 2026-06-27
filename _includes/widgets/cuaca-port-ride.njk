@@ -8,31 +8,39 @@
 </div>
 
 <script>
-    // Automasi tarik data cuaca realtime (Open-Meteo API)
-    const locations = [
-        { name: 'Genting', id: 'weather_genting', lat: 3.42, lon: 101.79 },
-        { name: 'Fraser', id: 'weather_fraser', lat: 3.71, lon: 101.73 },
-        { name: 'Betong', id: 'weather_betong', lat: 5.76, lon: 101.03 }
-    ];
+    // Pastikan laman web habis loading dulu baru tarik data cuaca
+    document.addEventListener("DOMContentLoaded", function() {
+        const locations = [
+            { name: 'Genting', id: 'weather_genting', lat: 3.42, lon: 101.79 },
+            { name: 'Fraser', id: 'weather_fraser', lat: 3.71, lon: 101.73 },
+            { name: 'Betong', id: 'weather_betong', lat: 5.76, lon: 101.03 }
+        ];
 
-    function getWeatherCondition(code) {
-        if (code === 0) return 'Cerah ☀️';
-        if (code >= 1 && code <= 3) return 'Berawan 🌤️';
-        if (code >= 45 && code <= 48) return 'Berkabus 🌫️';
-        if (code >= 51 && code <= 67) return 'Hujan 🌧️';
-        if (code >= 80 && code <= 82) return 'Hujan Lebat ⛈️';
-        return 'Tidak Tentu ❓';
-    }
+        function getWeatherCondition(code) {
+            if (code === 0) return 'Cerah ☀️';
+            if (code >= 1 && code <= 3) return 'Berawan 🌤️';
+            if (code >= 45 && code <= 48) return 'Berkabus 🌫️';
+            if (code >= 51 && code <= 67) return 'Hujan 🌧️';
+            if (code >= 80 && code <= 82) return 'Hujan Lebat ⛈️';
+            return 'Tidak Tentu ❓';
+        }
 
-    locations.forEach(loc => {
-        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true`)
-            .then(res => res.json())
-            .then(data => {
-                const condition = getWeatherCondition(data.current_weather.weathercode);
-                document.getElementById(loc.id).innerText = condition;
-            })
-            .catch(() => {
-                document.getElementById(loc.id).innerText = 'Gagal ❌';
-            });
+        locations.forEach(function(loc) {
+            // Guna endpoint Open-Meteo terkini yang disyorkan
+            var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + loc.lat + '&longitude=' + loc.lon + '&current=weather_code';
+            
+            fetch(url)
+                .then(function(res) {
+                    if (!res.ok) throw new Error("Ralat rangkaian");
+                    return res.json();
+                })
+                .then(function(data) {
+                    var condition = getWeatherCondition(data.current.weather_code);
+                    document.getElementById(loc.id).innerText = condition;
+                })
+                .catch(function() {
+                    document.getElementById(loc.id).innerText = 'Gagal Dikesan ❌';
+                });
+        });
     });
 </script>
