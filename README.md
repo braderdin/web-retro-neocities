@@ -12,10 +12,17 @@
 
 ---
 
+### 👋 Salam Perkenalan dari Newbie
+Salam sejahtera. Saya BraderDin, seorang *rider* tegar yang baru sangat berjinak-jinak dalam dunia koding. Projek Neocities ini adalah tempat saya belajar merangkak untuk memahami HTML, CSS, 11ty, dan Python. Saya budak baru belajar, kod di dalam repo ini pun banyak yang saya *copy-paste*, kaji, dan ubah suai secara *trial and error*. 
+
+Kalau ada salah silap, kod yang berterabur, atau amalan *security* yang kurang kemas, saya menyusun sepuluh jari memohon maaf. Harap otai-otai, *master-master* koding, dan abang-abang *programmer* di luar sana dapat beri tunjuk ajar serta teguran membina. Terima kasih sudi singgah ke garaj digital saya yang tak seberapa ini!
+
+---
+
 ### 🤖 STATUS AUTOMASI PROJEK (Live Update)
-> 🗓️ **Kemas Kini Terakhir Waktu MY:** `Menunggu robot pusingan seterusnya...`
+> 🗓️ **Kemas Kini Terakhir Waktu MY:** `<!-- MY_TIME -->Menunggu robot pusingan seterusnya...<!-- MY_TIME_END -->`
 >
-> 🏁 **Status Cuaca Terkini Betong:** `Tengah sedut data...`
+> 🏁 **Status Cuaca Terkini Betong:** `<!-- README_BETONG_WEATHER -->Tengah sedut data...<!-- README_BETONG_WEATHER_END -->`
 ---
 
 ### 🛠️ Senarai Senjata & Stack Utama (Tech Stack)
