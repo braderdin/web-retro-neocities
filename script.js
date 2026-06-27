@@ -33,6 +33,37 @@ document.addEventListener('mousemove', function(e) {
 });
 
 
+// ========================================================
+// --- UTULITI UNTUK MUAT KOMPONEN LUAR (JS FETCH) ---
+// ========================================================
+function muatKomponen(idElement, laluanFail) {
+    fetch(laluanFail)
+        .then(response => {
+            if (!response.ok) throw new Error('Gagal memuatkan komponen: ' + laluanFail);
+            return response.text();
+        })
+        .then(data => {
+            const tapak = document.getElementById(idElement);
+            if (tapak) {
+                tapak.innerHTML = data;
+            }
+        })
+        .catch(error => console.error(error));
+}
+
+// Menjalankan fungsi suntikan automatik apabila halaman index.html dibuka
+muatKomponen('comp-header', 'components/header.html');
+muatKomponen('comp-profile', 'components/profile.html');
+muatKomponen('comp-menu', 'components/menu.html');
+muatKomponen('comp-logbook', 'components/logbook.html');
+muatKomponen('comp-garage', 'components/garage.html');
+muatKomponen('comp-backstory', 'components/backstory.html');
+muatKomponen('comp-vitals', 'components/vitals.html');
+muatKomponen('comp-inventory', 'components/inventory.html');
+
+
+
+
 
 
 

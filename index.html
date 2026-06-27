@@ -8,105 +8,25 @@
 </head>
 <body>
 
-    <!-- Papan Header Utama (Gaya Banner Besar Frills) -->
-    <header class="main-header">
-        <h1>BRADERDIN.</h1>
-        <p class="subtitle">✨ Selamat Datang ke Port Moto-Kembara Comel Abang Din ✨</p>
-    </header>
+    <div id="comp-header"></div>
 
-    <!-- Kontena Utama (Layout 2 Lajur Teratur) -->
     <div class="main-layout">
         
-        <!-- LAJUR KIRI: Vitals, Status Watak & Menu Utama -->
         <aside class="sidebar">
-            <!-- Kotak Profil -->
-            <div class="box character-card">
-                <div class="avatar-frame">
-                    <img src="https://bit.ly/3QmPmqx" alt="Avatar Abang Din">
-                </div>
-                <h2>@BraderDin</h2>
-                <p class="tagline">🏍️ "Ride Jauh, Layan Kopi, Hidup Happy!" 🌸</p>
-                
-                <hr class="dashed-line">
-                
-                <!-- Stat Watak Gaya RPG -->
-                <ul class="stats-list">
-                    <li><span>Class:</span> <span>XMAX & ADV Rider 🛵</span></li>
-                    <li><span>Alignment:</span> <span>Chaotic Santai ☕</span></li>
-                    <li><span>Base:</span> <span>Selangor, MY 🇲🇾</span></li>
-                </ul>
-            </div>
-
-            <!-- Kotak Menu Navigasi Utama (Multi-Page) -->
-            <div class="box">
-                <h3>🗺️ Menu Utama</h3>
-                <a href="index.html" class="social-link" style="background-color: #ff5500; color: black; display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777;">🏠 Home</a>
-                <a href="about.html" class="social-link" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🌷 About</a>
-                <a href="blog.html" class="social-link" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">📝 Blog</a>
-                <a href="links.html" class="social-link" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🔗 Links</a>
-                <a href="bookmarks.html" class="social-link" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🔖 Bookmarks</a>
-                <a href="experiments.html" class="social-link" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🧪 Experiments</a>
-                <a href="curios.html" class="social-link" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">🪐 Curios</a>
-                <a href="guestbook.html" class="social-link" style="display: block; padding: 8px; margin-bottom: 5px; text-decoration: none; text-align: center; font-weight: bold; border: 1px solid #777; color: white; background-color: #333;">👋 Guestbook</a>
-            </div>
+            <div id="comp-profile"></div>
+            <div id="comp-menu"></div>
         </aside>
 
-        <!-- LAJUR KANAN: Isi Logbook, Jentera & Vitals Utama -->
         <main class="content">
-            <!-- Kotak Logbook -->
-            <div class="box logbook-box">
-                <h3>📝 Logbook Kembara Terkini</h3>
-                <p>Misi ride lintas sempadan seterusnya sedang dirancang. Tayar dah mula berdenyut mintak jalan jauh semula ni bang! Tunggu log penuh dekat sini nanti.</p>
-            </div>
-            
-            <!-- Kotak Garage -->
-            <div class="box garage-box">
-                <h3>💖 Jentera Kesayangan</h3>
-                <p>Garaj comel saya menyimpan dua ekor kuda perang utama:</p>
-                <ul>
-                    <li>✨ <strong>Honda ADV160</strong> - Si Comel Redah Jam</li>
-                    <li>🔥 <strong>Yamaha XMAX 250</strong> - Si Gergasi Highway</li>
-                </ul>
-            </div>
-            
-            <!-- Kotak Backstory -->
-            <div class="box backstory-box">
-                <h3>📜 Backstory Rider</h3>
-                <p>Membesar dengan minat mendalam pada jentera roda dua. Bagi saya, setiap perjalanan merentas sempadan adalah sebuah lembaran cerita. Bukan kelajuan yang dicari, tetapi ukhuwah (brotherhood) dan ketenangan melayan korner di jalanan!</p>
-            </div>
-
-            <!-- Bar Tenaga & Minyak Watak -->
-            <div class="box vitals-box">
-                <h3>📊 Vitals & Status Semasa</h3>
-                <div class="vital-bar">
-                    <label>Stamina Rider: ☕ Kopi O Charger</label>
-                    <progress value="85" max="100"></progress>
-                </div>
-                <div class="vital-bar" style="margin-top: 10px;">
-                    <label>Mood Ride: 🗺️ Lapar Jalan Jauh</label>
-                    <progress value="95" max="100"></progress>
-                </div>
-            </div>
-
-            <!-- Senarai Barang Unik -->
-            <div class="box inventory-box">
-                <h3>🎒 Beg Kembara (Inventory)</h3>
-                <p class="tagline" style="margin-bottom: 10px;">"Barang wajib ada sebelum pulas throttle sempadan:"</p>
-                <ul class="inventory-list">
-                    <li>🎒 1x Riding Jacket (Full Padding)</li>
-                    <li>📷 1x Action Camera 360° (Sauk footage layan korner)</li>
-                    <li>🔧 1x Kit Selenggara Tayar Darurat</li>
-                    <li>Passport & Dokumen Sempadan (Key Item) 🛂</li>
-                </ul>
-            </div>
+            <div id="comp-logbook"></div>
+            <div id="comp-garage"></div>
+            <div id="comp-backstory"></div>
+            <div id="comp-vitals"></div>
+            <div id="comp-inventory"></div>
         </main>
 
     </div>
 
-    <!-- Hubungan ke fail Javascript abang -->
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
