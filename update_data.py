@@ -79,7 +79,8 @@ def update_avatar():
         with open("_includes/components/profile.njk", "r", encoding="utf-8") as f:
             profil_html = f.read()
             
-        pattern = r'(<!-- AVATAR_URL -->)(.*?)(<!-- AVATAR_URL_END -->)'
+        # Guna Regex baharu yang lebih bersih tanpa perlukan tag komen HTML
+        pattern = r'(<img id="avatar-img" src=")(.*?)(")'
         profil_html = re.sub(pattern, rf'\g<1>{avatar_baru}\g<3>', profil_html)
         
         with open("_includes/components/profile.njk", "w", encoding="utf-8") as f:
