@@ -54,13 +54,13 @@ def update_weather_and_readme():
         tz_my = timezone(timedelta(hours=8))
         masa_sekarang = datetime.now(tz_my).strftime("%d %b %Y, %I:%M %p")
 
-        # Ganti masa di Readme
+        # Ganti masa di Readme (Dengan tambahan simbol backtick ` supaya warna kelabu kekal)
         pattern_masa = r'(<!-- MY_TIME -->)(.*?)(<!-- MY_TIME_END -->)'
-        readme_text = re.sub(pattern_masa, rf'\g<1>{masa_sekarang}\g<3>', readme_text)
+        readme_text = re.sub(pattern_masa, rf'\g<1>`{masa_sekarang}`\g<3>', readme_text)
 
-        # Ganti cuaca Betong di Readme
+        # Ganti cuaca Betong di Readme (Dengan tambahan simbol backtick `)
         pattern_betong_readme = r'(<!-- README_BETONG_WEATHER -->)(.*?)(<!-- README_BETONG_WEATHER_END -->)'
-        readme_text = re.sub(pattern_betong_readme, rf'\g<1>{betong_condition}\g<3>', readme_text)
+        readme_text = re.sub(pattern_betong_readme, rf'\g<1>`{betong_condition}`\g<3>', readme_text)
 
         # Simpan semula fail Readme
         with open("README.md", "w", encoding="utf-8") as f:
