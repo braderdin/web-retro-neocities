@@ -29,3 +29,27 @@ title: Home
         <progress value="85" max="100"></progress>
     </div>
 </div>
+
+<!-- ========================================== -->
+<!-- WIDGET TAMBAHAN: CUACA & PELAWAT           -->
+<!-- ========================================== -->
+<div class="retro-boxes-container">
+    {% include "widgets/cuaca-port-ride.njk" %}
+    {% include "widgets/jumlah-pelawat.njk" %}
+</div>
+
+<style>
+    /* Kontainer untuk kedua-dua kotak supaya tersusun cantik di bawah Vitals */
+    .retro-boxes-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Jarak antara kotak cuaca & pelawat */
+        margin-top: 15px; /* Jarak dari kotak Vitals di atasnya */
+        width: 100%;
+    }
+    
+    /* Buang margin bawah untuk kotak terakhir supaya border nampak kemas */
+    .retro-boxes-container .box {
+        margin-bottom: 0;
+    }
+</style>

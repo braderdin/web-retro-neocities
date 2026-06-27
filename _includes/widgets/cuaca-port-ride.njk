@@ -1,0 +1,38 @@
+<div class="box weather-box">
+    <h3>📊 Cuaca Port Ride</h3>
+    <div id="weather_grid" style="display: flex; flex-direction: column; gap: 8px; margin-top: 10px;">
+        <div>🏁 Genting: <span id="weather_genting">Mengambil data...</span></div>
+        <div>🏁 Fraser: <span id="weather_fraser">Mengambil data...</span></div>
+        <div>🏁 Betong: <span id="weather_betong">Mengambil data...</span></div>
+    </div>
+</div>
+
+<script>
+    // Automasi tarik data cuaca realtime (Open-Meteo API)
+    const locations = [
+        { name: 'Genting', id: 'weather_genting', lat: 3.42, lon: 101.79 },
+        { name: 'Fraser', id: 'weather_fraser', lat: 3.71, lon: 101.73 },
+        { name: 'Betong', id: 'weather_betong', lat: 5.76, lon: 101.03 }
+    ];
+
+    function getWeatherCondition(code) {
+        if (code === 0) return 'Cerah ☀️';
+        if (code >= 1 && code <= 3) return 'Berawan 🌤️';
+        if (code >= 45 && code <= 48) return 'Berkabus 🌫️';
+        if (code >= 51 && code <= 67) return 'Hujan 🌧️';
+        if (code >= 80 && code <= 82) return 'Hujan Lebat ⛈️';
+        return 'Tidak Tentu ❓';
+    }
+
+    locations.forEach(loc => {
+        fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true`)
+            .then(res => res.json())
+            .then(data => {
+                const condition = getWeatherCondition(data.current_weather.weathercode);
+                document.getElementById(loc.id).innerText = condition;
+            })
+            .catch(() => {
+                document.getElementById(loc.id).innerText = 'Gagal ❌';
+            });
+    });
+</script>
