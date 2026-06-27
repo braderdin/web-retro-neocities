@@ -32,7 +32,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
           
-          # 🛠️ PEMBETULAN 2: Tambah laluan profile.njk supaya gambar avatar yang bertukar ikut disimpan sekali
-          git add _includes/widgets/cuaca-port-ride.njk _includes/widgets/jumlah-pelawat.njk _includes/components/profile.njk
+          # 🛠️ PEMBETULAN 2: Tambah laluan README.md supaya cuaca di muka depan ikut disimpan sekali
+          git add _includes/widgets/cuaca-port-ride.njk _includes/widgets/jumlah-pelawat.njk _includes/components/profile.njk README.md
           
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Kemas kini widget cuaca, pelawat & avatar" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Kemas kini widget cuaca, pelawat, avatar & README" && git push)
