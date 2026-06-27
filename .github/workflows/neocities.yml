@@ -1,4 +1,4 @@
-name: Hantar Web ke Neocities Auto
+name: Deploy to Neocities via Eleventy
 
 on:
   push:
@@ -10,13 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Ambil kod repo terkini
-      uses: actions/checkout@v4
+      # 1. Ambil kod terkini dari GitHub abang
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Tembak fail masuk Neocities
-      uses: bcomnes/deploy-to-neocities@v3
-      with:
-        api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-        # PENTING: Kita beritahu robot, fail kita ada dekat luar sekali (root directory)
-        dist_dir: _site
-        cleanup: true
+      # 2. Pasang enjin Node.js di dalam pelayan GitHub
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Download komponen Eleventy di dalam pelayan GitHub
+      - name: Install Dependencies
+        run: npm install
+
+      # 4. Jalankan proses kompilasi cantum fail (.njk -> HTML)
+      - name: Build Eleventy Site
+        run: npx @11ty/eleventy
+
+      # 5. Hantar HASIL FOLDER _SITE yang dah siap ditukarkan ke Neocities
+      - name: Deploy to Neocities
+        uses: maxmind/neocities-deploy@v1
+        with:
+          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+          dist_dir: _site
