@@ -9,16 +9,20 @@
 <body>
     <marquee class="retro-marquee" scrollamount="5">🌸 SELAMAT DATANG KE GARAJ DIGITAL BRADERDIN 🌸</marquee>
     
+    {% include "components/header.njk" %}
+
     <div class="main-layout">
-        <!-- LAJUR KIRI: Kita masukkan komponen menu secara kekal di sini -->
+        
         <aside class="sidebar">
-            {% include "components/menu.html" %}
+            {% include "components/profile.njk" %}
+            
+            {% include "components/menu.njk" %}
         </aside>
 
-        <!-- LAJUR KANAN: Tempat di mana kandungan berbeza setiap halaman akan masuk -->
         <main class="content">
             {{ content | safe }}
         </main>
+
     </div>
     
     <script src="/script.js"></script>
