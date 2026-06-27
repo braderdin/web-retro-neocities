@@ -18,5 +18,5 @@ jobs:
       with:
         api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
         # PENTING: Kita beritahu robot, fail kita ada dekat luar sekali (root directory)
-        dist_dir: '.'
+        dist_dir: _site
         cleanup: true
