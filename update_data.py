@@ -38,8 +38,8 @@ def update_weather_and_readme():
                 betong_condition = condition
             
             # Guna Regex untuk tukar teks di dalam fail NJK
-            pattern = rf'(<!-- {loc}_WEATHER -->)(.*?)(<!-- {loc}_WEATHER_END -->)'
-            cuaca_html = re.sub(pattern, rf'\g<1>{condition}\g<3>', cuaca_html)
+            pattern = rf'(<!--\s*{loc}_WEATHER\s*-->)(.*?)(<!--\s*{loc}_WEATHER_END\s*-->)'
+            cuaca_html = re.sub(pattern, rf'\g<1>{condition}\g<3>', cuaca_html, flags=re.IGNORECASE | re.DOTALL)
 
         # Simpan semula fail widget cuaca
         with open("_includes/widgets/cuaca-port-ride.njk", "w", encoding="utf-8") as f:
@@ -54,13 +54,13 @@ def update_weather_and_readme():
         tz_my = timezone(timedelta(hours=8))
         masa_sekarang = datetime.now(tz_my).strftime("%d %b %Y, %I:%M %p")
 
-        # Ganti masa di Readme (Dengan tambahan simbol backtick ` supaya warna kelabu kekal)
-        pattern_masa = r'(<!-- MY_TIME -->)(.*?)(<!-- MY_TIME_END -->)'
-        readme_text = re.sub(pattern_masa, rf'\g<1>`{masa_sekarang}`\g<3>', readme_text)
+        # Ganti masa di Readme (Kebal terhadap ruang kosong tersembunyi)
+        pattern_masa = r'(<!--\s*MY_TIME\s*-->)(.*?)(<!--\s*MY_TIME_END\s*-->)'
+        readme_text = re.sub(pattern_masa, rf'\g<1>`{masa_sekarang}`\g<3>', readme_text, flags=re.IGNORECASE | re.DOTALL)
 
-        # Ganti cuaca Betong di Readme (Dengan tambahan simbol backtick `)
-        pattern_betong_readme = r'(<!-- README_BETONG_WEATHER -->)(.*?)(<!-- README_BETONG_WEATHER_END -->)'
-        readme_text = re.sub(pattern_betong_readme, rf'\g<1>`{betong_condition}`\g<3>', readme_text)
+        # Ganti cuaca Betong di Readme (Kebal terhadap ruang kosong tersembunyi)
+        pattern_betong_readme = r'(<!--\s*README_BETONG_WEATHER\s*-->)(.*?)(<!--\s*README_BETONG_WEATHER_END\s*-->)'
+        readme_text = re.sub(pattern_betong_readme, rf'\g<1>`{betong_condition}`\g<3>', readme_text, flags=re.IGNORECASE | re.DOTALL)
 
         # Simpan semula fail Readme
         with open("README.md", "w", encoding="utf-8") as f:
@@ -86,8 +86,8 @@ def update_visitors():
             pelawat_html = f.read()
 
         # Guna Regex untuk tukar angka di antara tag rahsia
-        pattern = r'(<!-- VISITOR_COUNT -->)(.*?)(<!-- VISITOR_COUNT_END -->)'
-        pelawat_html = re.sub(pattern, rf'\g<1>{format_jumlah}\g<3>', pelawat_html)
+        pattern = r'(<!--\s*VISITOR_COUNT\s*-->)(.*?)(<!--\s*VISITOR_COUNT_END\s*-->)'
+        pelawat_html = re.sub(pattern, rf'\g<1>{format_jumlah}\g<3>', pelawat_html, flags=re.IGNORECASE | re.DOTALL)
 
         # Simpan semula fail widget pelawat
         with open("_includes/widgets/jumlah-pelawat.njk", "w", encoding="utf-8") as f:
@@ -110,7 +110,7 @@ def update_avatar():
             profil_html = f.read()
             
         pattern = r'(<img id="avatar-img" src=")(.*?)(")'
-        profil_html = re.sub(pattern, rf'\g<1>{avatar_baru}\g<3>', profil_html)
+        profil_html = re.sub(pattern, rf'\g<1>{avatar_baru}\g<3>', profil_html, flags=re.IGNORECASE | re.DOTALL)
         
         with open("_includes/components/profile.njk", "w", encoding="utf-8") as f:
             f.write(profil_html)
