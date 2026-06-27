@@ -1,0 +1,31 @@
+name: 🤖 Automasi Widget 1 Jam
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Berjalan setiap 1 jam (Minit ke-0)
+  workflow_dispatch: # Membolehkan abang tekan butang jalankan secara manual
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ambil Kod Repo
+        uses: actions/checkout@v3
+
+      - name: Sediakan Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Pasang Modul Sampingan (Requests)
+        run: pip install requests
+
+      - name: Jalankan Skrip Python
+        run: python update_data.py
+
+      - name: Simpan Perubahan ke GitHub
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add _includes/widgets/cuaca-port-ride.njk _includes/widgets/jumlah-pelawat.njk
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Kemas kini widget cuaca & pelawat" && git push)
