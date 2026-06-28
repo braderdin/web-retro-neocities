@@ -1,34 +1,38 @@
-<div class="box visitor-box" style="text-align: center; margin-top: 15px; border: 2px dashed #00ffcc; padding: 15px; background: rgba(0, 0, 0, 0.7); box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);">
-    <h3 style="margin-bottom: 12px; color: #ff00ff; text-shadow: 2px 2px #000; font-size: 1.2rem; letter-spacing: 2px;">☕ POWERED BY KOPI O ☕</h3>
-    <p style="margin-bottom: 12px; color: #ffffff; font-family: 'Courier New', monospace; font-size: 0.95rem;">📊 Jumlah Pelawat Garaj:</p>
+<div class="box visitor-box" style="text-align: center;">
+    <h3 style="margin-bottom: 15px;">☕ POWERED BY KOPI O ☕</h3>
+    <p style="margin-bottom: 10px;">📊 Jumlah Pelawat Garaj:</p>
     
-    <div style="font-family: 'Courier New', Courier, monospace; font-size: 2rem; letter-spacing: 6px; background: #050505; color: #00ffcc; padding: 8px 18px; border: 4px inset #333; display: inline-block; border-radius: 4px; font-weight: bold; box-shadow: inset 0 0 10px #000, 0 0 8px rgba(0, 255, 204, 0.6); min-width: 140px; text-shadow: 0 0 8px #00ffcc, 0 0 15px #00ffcc;">
-        <span id="retro-counter">00000</span>
+    <!-- Kaunter Digital Retro (Mengekalkan Rupa Asal & Bermula dari 77) -->
+    <div style="font-family: monospace; font-size: 1.8rem; letter-spacing: 8px; background: #111; color: #00ffcc; padding: 10px 15px; border: 3px inset #555; display: inline-block; border-radius: 3px; font-weight: bold; text-shadow: 0 0 5px #00ffcc;">
+        <span id="retro-counter">00077</span>
     </div>
 
     <script>
         (function() {
-            // Menggunakan API Percuma CounterAPI yang stabil untuk Neocities anda
-            // ID unik berdasarkan domain anda supaya jumlah pelawat tidak bercampur dengan orang lain
+            // ID unik tersendiri untuk mengelakkan pertembungan data kaunter lama
             const namespace = "braderdin.neocities.org";
-            const key = "garaj_visitor_counter";
+            const key = "garaj_counter_final"; 
             const url = `https://api.counterapi.dev/v1/${namespace}/${key}/up`;
+
+            // Tetapkan nilai pandangan asal (views) dari Neocities sebagai asas
+            const baseViews = 77;
 
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     if (data && data.count) {
-                        // Format nombor supaya sentiasa ada 5 digit (Contoh: 00055) untuk gaya mesin retro
-                        let countString = data.count.toString().padStart(5, '0');
+                        // Jumlahkan statistik hidup API bersama dengan 77 views sedia ada anda
+                        let totalViews = data.count + baseViews;
+                        let countString = totalViews.toString().padStart(5, '0');
                         document.getElementById('retro-counter').textContent = countString;
                     } else {
-                        document.getElementById('retro-counter').textContent = "00055";
+                        document.getElementById('retro-counter').textContent = baseViews.toString().padStart(5, '0');
                     }
                 })
                 .catch(error => {
                     console.error("Gagal memuatkan hit counter:", error);
-                    // Fail-safe jika API gangguan, tunjuk nombor fallback asal
-                    document.getElementById('retro-counter').textContent = "00055";
+                    // Jika API mengalami gangguan, ia tetap memaparkan angka asas 77 secara selamat
+                    document.getElementById('retro-counter').textContent = baseViews.toString().padStart(5, '0');
                 });
         })();
     </script>
