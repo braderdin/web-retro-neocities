@@ -102,7 +102,7 @@ def update_avatar():
         "https://bit.ly/3QmPmqx",
         "https://i.imgur.com/My1N1mu.jpeg",
         "https://i.imgur.com/BznKqU1.jpeg",
-        "https://i.imgur.com/GAMBAR_IMGUR_3.jpg"
+        "https://i.imgur.com/EhrAyKd.jpeg"
     ]
     try:
         avatar_baru = random.choice(senarai_avatar)
